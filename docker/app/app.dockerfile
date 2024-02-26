@@ -26,8 +26,15 @@ RUN addgroup \
     --uid "$UID" \
     $USER
 
+# Copiando scripts e config necessários para dentro da imagem.
+COPY ./docker/app/docker-entrypoint.sh /docker/docker-entrypoint.sh
+COPY ./docker/app/php.ini /usr/local/etc/php/conf.d/custom.ini
+
+# Altera permissão de execução para o script entrypoint
+RUN chmod +x /docker/docker-entrypoint.sh
+
 WORKDIR /var/www/html
 
 EXPOSE 9000
 
-ENTRYPOINT [ "php-fpm" ]
+ENTRYPOINT ["/docker/docker-entrypoint.sh"]
