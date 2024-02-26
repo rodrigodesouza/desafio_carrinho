@@ -24,6 +24,8 @@ docker-compose exec app bash
 
 Comando para rodar todos os testes:
 
+**Obs**: certifique-se de que a pasta vendor já tenha sido instalada completamente através do entrypoint (o comando 'docker-compose up -d' aciona o comando 'composer install' no /docker/app/docker-entrypoint.sh).
+
 ```
 ./vendor/bin/phpunit
 ```
