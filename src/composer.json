@@ -1,0 +1,14 @@
+{
+    "autoload": {
+        "psr-4": {
+            "Desafio\\Carrinho\\": "app/",
+            "Desafio\\Builders\\": "tests/Builders/"
+        }
+    },
+    "autoload-dev": {
+        "Desafio\\Tests\\": "tests/"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    }
+}
